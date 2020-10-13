@@ -29,5 +29,4 @@ class RegisterAddActivity : BaseActivity(){
             startActivity(intent)
         })
     }
-
 }
