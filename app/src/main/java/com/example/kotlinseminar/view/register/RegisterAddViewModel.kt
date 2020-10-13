@@ -27,7 +27,7 @@ class RegisterAddViewModel : BaseViewModel() {
 
     val id = MutableLiveData<String>("")
     val password = MutableLiveData<String>("")
-    val name = MutableLiveData<String>("")
+    val name = MutableLiveData<String>()
     val phoneNumber = MutableLiveData<String>("")
 
     val buttonFinish = SingleLiveEvent<Unit>()
