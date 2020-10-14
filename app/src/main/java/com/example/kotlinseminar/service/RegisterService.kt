@@ -10,10 +10,10 @@ import kotlin.collections.HashMap
 
 interface RegisterService {
 
-    @GET("/test")
+    @GET("/get")
     fun requestLogin() : Observable<List<Data>>
 
-    @POST("/test")
+    @POST("/post")
     fun addRegister(
         @Body param: HashMap<String, Any?>
     ): Observable<RegisterAddData>

@@ -23,23 +23,23 @@ class RegisterActivity : BaseActivity() {
             registerModel = registerViewModel
         }
 
-        registerViewModel.buttonLogin.observe(this, {
-            registerViewModel.getRegiserData()
-        })
+        registerViewModel.apply {
+            this.buttonLogin.observe(this@RegisterActivity, {
+                this.getRegiserData()
+            })
 
-        registerViewModel.buttonAdd.observe(this, {
-            val intent = Intent(this, RegisterAddActivity::class.java)
-            startActivity(intent)
-        })
-
-        registerViewModel.registerDataResult.observe(this, {
-            if (it.get(0).id.equals("chojunhyung") && it.get(0).password.equals("1234")) {
-                val intent = Intent(this, MainActivity::class.java)
+            this.buttonAdd.observe(this@RegisterActivity, {
+                val intent = Intent(this@RegisterActivity, RegisterAddActivity::class.java)
                 startActivity(intent)
-            }
-        })
+            })
 
+            this.registerDataResult.observe(this@RegisterActivity, {
+
+                if (it.get(0).username == "chojunhyung" && it.get(0).password.equals("1234")) {
+                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                    startActivity(intent)
+                }
+            })
+        }
     }
-
-
 }

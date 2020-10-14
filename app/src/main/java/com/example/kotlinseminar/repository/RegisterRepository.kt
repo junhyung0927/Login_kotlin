@@ -17,17 +17,14 @@ class RegisterRepository {
         password: String?,
         name: String?,
         phoneNumber: String?
-    ): Observable<RegisterAddData>{
+    ) = registerService.addRegister(HashMap<String, Any?>().apply {
+            put("id", id)
+            put("password", password)
+            put("name", name)
+            put("phoneNumber", phoneNumber)
+        })
 
-        val input = HashMap<String, Any?>()
-        input.put("id", id)
-        input.put("password", password)
-        input.put("name", name)
-        input.put("phoneNumber", phoneNumber)
-        return registerService.addRegister(input)
-    }
-
-    fun getRegisterData() : Observable<List<Data>> {
+    fun getRegisterData(): Observable<List<Data>> {
         return registerService.requestLogin()
     }
 }
