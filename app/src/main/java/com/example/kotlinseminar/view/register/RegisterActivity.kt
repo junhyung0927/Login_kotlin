@@ -1,13 +1,17 @@
 package com.example.kotlinseminar.view.register
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import com.example.kotlinseminar.view.base.BaseActivity
 import com.example.kotlinseminar.R
 import com.example.kotlinseminar.databinding.ActivityRegisterBinding
 
 class RegisterActivity : BaseActivity() {
+    var start: Long = 0
+
     private val binding by binding<ActivityRegisterBinding>(R.layout.activity_register)
     private lateinit var registerViewModel: RegisterViewModel
 
@@ -24,7 +28,8 @@ class RegisterActivity : BaseActivity() {
         }
 
         registerViewModel.buttonLogin.observe(this, {
-            registerViewModel.getRegiserData()
+            start = System.currentTimeMillis();
+            registerViewModel.getTestData(start)
         })
 
         registerViewModel.buttonAdd.observe(this, {
@@ -37,6 +42,7 @@ class RegisterActivity : BaseActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+
         })
 
     }
