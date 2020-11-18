@@ -23,8 +23,9 @@ class RegisterAddActivity : BaseActivity(){
             addViewModel = registerAddViewModel
         }
 
-        registerAddViewModel.addRegisterData()
+
         registerAddViewModel.buttonFinish.observe(this, {
+            registerAddViewModel.addRegisterData()
             val intent = Intent(this , RegisterActivity::class.java)
             startActivity(intent)
         })

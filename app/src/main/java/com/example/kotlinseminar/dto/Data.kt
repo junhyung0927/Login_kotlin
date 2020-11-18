@@ -1,6 +1,6 @@
 package com.example.kotlinseminar.dto
 
 data class Data(
-    val id: String,
+    val username: String,
     val password: String
 )

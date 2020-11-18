@@ -1,4 +1,4 @@
-package util
+package com.example.kotlinseminar.util
 
 import android.util.Log
 import androidx.annotation.MainThread

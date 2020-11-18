@@ -3,7 +3,7 @@ package com.example.kotlinseminar.view.register
 import androidx.lifecycle.MutableLiveData
 import com.example.kotlinseminar.view.base.BaseViewModel
 import com.example.kotlinseminar.repository.RegisterRepository
-import util.SingleLiveEvent
+import com.example.kotlinseminar.util.SingleLiveEvent
 import com.example.kotlinseminar.dto.RegisterAddData
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

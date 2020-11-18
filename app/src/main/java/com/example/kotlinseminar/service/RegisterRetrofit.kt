@@ -9,9 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class RegisterRetrofit{
     fun getInstance(): Retrofit {
         val interceptor = HttpLoggingInterceptor()
-//        val URL = "http://192.168.10.181:8787"
-//        val URL = "http://192.168.10.146:8787"
-        val URL = "http://10.0.2.2:3001"
+        val URL = "http://10.0.2.2:3001/"
+        //??뭔데 이거
 
         val client = OkHttpClient.Builder()
             .addInterceptor(interceptor.setLevel(HttpLoggingInterceptor.Level.BODY))

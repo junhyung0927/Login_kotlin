@@ -2,24 +2,16 @@ package com.example.kotlinseminar.service
 
 import com.example.kotlinseminar.dto.Data
 import com.example.kotlinseminar.dto.RegisterAddData
-import com.example.kotlinseminar.dto.TestData
 import io.reactivex.Observable
-import retrofit2.Callback
-import retrofit2.http.*
-
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.POST
+import kotlin.collections.HashMap
 
 interface RegisterService {
 
-    @GET("/data")
-    fun requestTest(
-        @Query("count") count: String
-    ): Observable<List<TestData?>?>?
-
-    @GET("/data")
-    fun requestTest2(): Observable<List<TestData>>
-
     @GET("/test")
-    fun requestLogin(): Observable<List<Data>>
+    fun requestLogin() : Observable<List<Data>>
 
     @POST("/test")
     fun addRegister(
